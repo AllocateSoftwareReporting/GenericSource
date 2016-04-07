@@ -597,7 +597,7 @@ WHERE gi_EMALW.Column02 = gi_EMDET.Column02
 AND gi_EMALW.Column02 &lt;&gt; 'DET_NUMBERA'
 AND CASE WHEN gi_EMALW.Column05 = '0' THEN gi_EMALW.Column07 ELSE gi_EMALW.Column05 END &lt;&gt; '0'
 AND CASE WHEN dbo.correct_date_format_ddmmyyyy(gi_EMALW.Column03) &lt; dbo.correct_date_format_ddmmyyyy(gi_EMDET.Column06) THEN dbo.correct_date_format_ddmmyyyy(gi_EMDET.Column06)
-	ELSE dbo.correct_date_format_ddmmyyyy(gi_EMALW.Column03) END &gt; DATEADD(MONTH,-360,GETDATE())
+	ELSE dbo.correct_date_format_ddmmyyyy(gi_EMALW.Column03) END &gt; DATEADD(MONTH,-12,GETDATE())
 UNION ALL
 SELECT 'import_EMPAT' AS record_key,
 '1' as record_no ,
